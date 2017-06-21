@@ -1,2 +1,1 @@
-# grading-python
-Docker: Python grading environment
+Grading environment with specific Python version in path.
