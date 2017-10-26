@@ -1,4 +1,4 @@
-FROM apluslms/grading-base:debian-stretch
+FROM apluslms/grading-base:debian-stretch-1.1
 
 RUN apt-get install -qy \
   python3 \
