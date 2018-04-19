@@ -5,6 +5,8 @@ RUN apt-get update -qqy && DEBIAN_FRONTEND=noninteractive apt-get install -qqy -
     python3 \
     python3-pip \
     python3-setuptools \
+ && ln -s /usr/bin/python3 /usr/local/bin/python \
+ && ln -s /usr/bin/pip3 /usr/local/bin/pip \
  && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 RUN pip3 --no-cache-dir --disable-pip-version-check install \
