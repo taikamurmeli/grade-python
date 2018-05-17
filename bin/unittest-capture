@@ -1,0 +1,5 @@
+#!/bin/sh
+capture python3 -m unittest -- "$@"
+RES=$?
+[ $RES -eq 0 ] && err-to-out
+exit $RES
