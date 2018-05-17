@@ -1,4 +1,4 @@
-FROM apluslms/grading-base:2.1
+FROM apluslms/grading-base:2.2
 
 RUN apt-get update -qqy && DEBIAN_FRONTEND=noninteractive apt-get install -qqy --no-install-recommends \
     -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
