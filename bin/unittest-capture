@@ -1,6 +1,5 @@
 #!/bin/sh
-export PYTHONPATH=/exercise
-capture python3 -m unittest -- "$@"
+capture unittest "$@"
 RES=$?
 [ $RES -eq 0 ] && err-to-out
 exit $RES

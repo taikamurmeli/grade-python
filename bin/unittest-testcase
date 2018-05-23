@@ -19,6 +19,4 @@ while [ "$1" ]; do
     shift 2
 done
 
-export PYTHONPATH=/exercise
-exec testcase -t "$title" -p "$points" -s "$skip" -- \
-     python3 -m unittest -- "$@"
+exec testcase -t "$title" -p "$points" -s "$skip" -- unittest "$@"

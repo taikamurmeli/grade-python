@@ -1,0 +1,3 @@
+#!/bin/sh
+export PYTHONPATH=/exercise
+exec python3 -m unittest -- "$@"
