@@ -1,0 +1,3 @@
+#!/bin/sh
+[ "$*" ] || set -- '.'
+exec python3 -m compileall "$@"

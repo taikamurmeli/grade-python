@@ -42,3 +42,8 @@ In addition to [grading-base](https://github.com/apluslms/grading-base), this co
     Adds `/exercise` to `PYTHONPATH`.
     Arguments are passed to `testcase` and unittest arguments for the python module.
     Check `testcase` documentation in [grading-base](https://github.com/apluslms/grading-base).
+
+* `python-compile-all`
+
+    Alias for `python3 -m compileall`.
+    Use it to validate python syntax of input files before tests.
