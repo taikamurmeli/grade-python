@@ -1,0 +1,33 @@
+#!/bin/sh
+
+points=1
+syntax="yes"
+ok=0
+while [ "$1" ]; do
+    case "$1" in
+        -p) points=$2 ; shift 2 ;;
+        -S) skip="no" ; shift ;;
+        --) shift ; break ;;
+        -*)
+            echo "ERROR: Invalid option '$1' for $0" >&2
+            echo "usage: $0 [-S] [-p points_per_test_class]" >&2
+            exit 64
+            ;;
+        *) break ;;
+    esac
+done
+
+if [ "$syntax" = "yes" ]; then
+    testcase -t "Syntax" python-compile-all
+    ok=$?
+fi
+
+for path in ./ /exercise/; do
+    find "$path" -iname '*test*.py'|xargs grep -E '\((unittest.)?TestCase\)'|while IFS=':' read file class end; do
+        file=${file#$path}
+        base=$(echo "${file%.py}" | tr '/' '.')
+        class=$(echo "$class" | sed 's/^\s*class\s*//; s/(.*$//')
+        name=$base.$class
+        testcase -t "$class" -p 1 -s $ok -- unittest "$name"
+    done
+done

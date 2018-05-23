@@ -47,3 +47,14 @@ In addition to [grading-base](https://github.com/apluslms/grading-base), this co
 
     Alias for `python3 -m compileall`.
     Use it to validate python syntax of input files before tests.
+
+* `run-all-unittests [-S] [-p points_per_test_class]`
+
+    Command to do it all.
+    Can replace `run.sh` in trivial cases.
+
+    First, script validates syntax, unless `-S` is provided.
+    If syntax is not valid, no tests are run.
+    Second, script finds all files matching `*test*.py` pattern from submission and exercise paths.
+    Then, it runs every class that directly inherits `unittest.TestCase` using `testcase` and `unittest`.
+    Testcase will give `points_per_test_class` many points per successful execution of unittest.
