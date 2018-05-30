@@ -23,7 +23,7 @@ if [ "$syntax" = "yes" ]; then
 fi
 
 for path in ./ /exercise/; do
-    find "$path" -iname '*test*.py'|xargs grep -E '\((unittest.)?TestCase\)'|while IFS=':' read file class end; do
+    find "$path" -iname '*test*.py'|xargs grep -HE '\((unittest.)?TestCase\)'|while IFS=':' read file class end; do
         file=${file#$path}
         base=$(echo "${file%.py}" | tr '/' '.')
         class=$(echo "$class" | sed 's/^\s*class\s*//; s/(.*$//')
