@@ -1,8 +1,6 @@
 #!/bin/sh
 
-echo "## Debug env:"
-export
-echo "#####"
+CACHE_TAG=${CACHE_TAG:-$DOCKER_TAG}
 
 if [ "${CACHE_TAG#*-}" = "${CACHE_TAG}" ]; then
     base=${CACHE_TAG}
