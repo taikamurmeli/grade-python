@@ -37,4 +37,5 @@ for layer in "" "math"; do
         echo "Building layer $layer returned $res" >&2
         exit $res
     fi
+    echo "$tag" >> tags.txt
 done

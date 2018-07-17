@@ -1,5 +1,5 @@
 #!/bin/sh
 
-docker image ls --format '{{.Tag}}' "$DOCKER_REPO" | while read tag; do
+while read tag; do
     docker push $DOCKER_REPO:$tag
-done
+done < tags.txt
