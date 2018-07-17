@@ -1,5 +1,9 @@
 #!/bin/sh
 
+echo "## Debug env:"
+export
+echo "#####"
+
 if [ "${CACHE_TAG#*-}" = "${CACHE_TAG}" ]; then
     base=${CACHE_TAG}
     main=
