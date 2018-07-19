@@ -3,5 +3,6 @@ FROM apluslms/grade-python:$FULL_TAG
 
 RUN apt_install \
     python3-matplotlib \
+    python3-tk \
     python3-scipy \
     python3-numpy
