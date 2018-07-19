@@ -15,6 +15,7 @@ else
     fi
 fi
 
+: > tags.txt
 for layer in "" "math"; do
     if [ "$layer" ]; then
         tag="$layer-$full"
