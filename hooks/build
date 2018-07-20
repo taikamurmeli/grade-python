@@ -16,7 +16,7 @@ else
 fi
 
 : > tags.txt
-for layer in "" "math"; do
+for layer in "" "math" "bokeh"; do
     if [ "$layer" ]; then
         tag="$layer-$full"
         file="Dockerfile.$layer"

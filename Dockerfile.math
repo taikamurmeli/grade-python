@@ -5,4 +5,5 @@ RUN apt_install \
     python3-matplotlib \
     python3-tk \
     python3-scipy \
-    python3-numpy
+    python3-numpy \
+ && :
