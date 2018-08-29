@@ -2,4 +2,4 @@
 export PYTHONPATH=/exercise
 [ "$*" ] || set -- /exercise/test_config.yaml
 exec capture -e /feedback/grading-script-errors -- \
-     python3 -m graderutils.main "$@" | python3 -m feedbackformat.html --grading-container
+     $(python3 -m graderutils.main "$@" | python3 -m feedbackformat.html --grading-container)
