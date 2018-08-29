@@ -1,4 +1,4 @@
 #!/bin/sh
 export PYTHONPATH=/exercise
 [ "$*" ] || set -- /exercise/test_config.yaml
-exec capture -e /feedback/grading-script-errors -- _graderutils_exec
+exec capture -e /feedback/grading-script-errors -- _graderutils_exec "$@"
