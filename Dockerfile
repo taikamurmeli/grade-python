@@ -2,10 +2,11 @@ ARG BASE_TAG=latest
 FROM apluslms/grading-base:$BASE_TAG
 
 COPY sbin /usr/local/sbin
+COPY etc_apt /etc/apt
 
 ARG GRADER_UTILS_VER=2.10.1
 
-RUN apt_install \
+RUN apt_install -t testing \
     python3 \
     python3-pip \
     python3-setuptools \
