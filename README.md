@@ -12,6 +12,11 @@ Version tag can also include `uN` meaning _update N_ where N is an increasing nu
 The update part is used to indicate updates to the image, where software versions did not change.
 For an example, `3.5-2.0u1` includes Python 3.5 on top of grading-base 2.0 and has one update after first release.
 
+There is also few additional versions of the image:
+
+ * `math-*` includes python packages matplotlib, scipy and numpy on top of base
+ * `bokeh-*` includes python package bokeh on top of base
+
 
 Utility commands
 ----------------
