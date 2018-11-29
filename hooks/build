@@ -13,6 +13,13 @@ else
     fi
 fi
 
+if [ "$full" != "latest" ]; then
+    echo "############################################################"
+    echo "### pulling latest image, so layer cache is update."
+    docker pull $DOCKER_REPO:latest || true
+    echo "############################################################"
+fi
+
 : > tags.txt
 for layer in "" "math" "bokeh"; do
     if [ "$layer" ]; then
